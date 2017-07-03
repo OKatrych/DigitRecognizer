@@ -103,7 +103,7 @@ Dalej było zaimplementowano trzywarstwową sieć i wyniku zmieniania neuronów 
 Przestrzeń dla rysowania `PaintArea` zrobiona za pomocą `JPanel`, nie jest bardzo fajnym narzędziem do rysowania (jeśli za szybko rysować to cyfry nie będzie widać), ale dla naszego eksperymetu tego jest wystarczająco. Został dodany nowy `MouseMotionListener` i teraz kiedy przeciskamy i poruszamy myszką to się wywoła metoda `mouseDragged(MouseEvent e)`, w niej zapisujemy pozycję myszki w wektor współrzędnych (x, y) w naszym przypadku to `ArrayList<Pair<Integer, Integer>> digitVector` i równocześnie rysujemy na wykresie. Kiedy zakończymy przesuwać myszką wywoła się metoda `mouseReleased(MouseEvent e)` w której wywołamy metodę `Tools.compressVector(digitVector)` i otrzymujemy zkompresowany vektor (8 par współrzędnych (x, y)).
 ## Algorytm kompresowania wektora namalowanej (w naszym programie) cyfry
 Algorytm jest wykonany w metodzie `Tools.compressVector(digitVector)`. Najpierw otrzymane współrzędne (x, y) potrebno rozszerzyć tak, żeby cyfra mieściła się na krajach macierzy 100x100 (uczenie sieci wykonane na podobnych cyfrach). 
-Przykład :
+Przykład :<br>
 ![Digit Progress example](img/2.png)
 
 Następnie potrzebnym jest zmniejszenie liczby współrzędnych (x, y) do ośmiu (takie cyfry były wykorzystane dla uczenia sieci). 
